@@ -11,7 +11,11 @@ jobs:
       - run:
           name: Run KICS
           command: |
-            /app/bin/kics scan -p ${PWD} -q /app/bin/assets --ci
+            /app/bin/kics scan -p ${PWD} -q /app/bin/assets -o results.json --ci
+      - store_test_results:
+          path: /opt/workspace/results.json
+      - store_artifacts:
+          path: /opt/workspace/results.json
 
 workflows:
   version: 2
