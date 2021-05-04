@@ -4,9 +4,6 @@ jobs:
     docker:
       - image: checkmarx/kics:latest-alpine
     steps:
-      - run: |
-          mkdir -p /opt/workspace
-          cd /opt/workspace
       - checkout
       - run:
           name: Run KICS
@@ -15,9 +12,9 @@ jobs:
             ls -la
             /app/bin/kics scan -p ${PWD} -q /app/bin/assets -o results.json --ci
       - store_test_results:
-          path: /opt/workspace/results.json
+          path: ~/results.json
       - store_artifacts:
-          path: /opt/workspace/results.json
+          path: ~/results.json
 
 workflows:
   version: 2
