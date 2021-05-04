@@ -1,8 +1,6 @@
 version: 2.1
-
-workflows:
-  # Name the workflow "welcome"
-  kics-scan:
+jobs:
+  kics:
     docker:
       - image: Checkmarx/kics:latest-alpien
     steps:
