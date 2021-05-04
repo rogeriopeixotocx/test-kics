@@ -10,7 +10,7 @@ jobs:
           command: |
             pwd
             ls -la
-            /app/bin/kics scan -p ${PWD} -q /app/bin/assets -o results.json --ci
+            /app/bin/kics scan -p ${PWD} -q /app/bin/assets -o ~/results.json --ci
       - store_test_results:
           path: ~/results.json
       - store_artifacts:
