@@ -1,0 +1,16 @@
+version: 2.1
+
+workflows:
+  # Name the workflow "welcome"
+  kics-scan:
+    docker:
+      - image: Checkmarx/kics:latest-alpien
+    steps:
+      - run: |
+          mkdir -p /opt/workspace
+          cd /opt/workspace
+      - checkout
+      - run:
+          name: Run KICS
+          command: |
+            /app/bin/kics scan -p ${PWD} -q /app/bin/assets --ci
