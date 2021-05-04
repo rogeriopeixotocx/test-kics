@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   kics:
     docker:
-      - image: checkmarx/kics:latest-alpien
+      - image: checkmarx/kics:latest-alpine
     steps:
       - run: |
           mkdir -p /opt/workspace
