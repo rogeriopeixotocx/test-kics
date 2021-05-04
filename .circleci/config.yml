@@ -12,3 +12,9 @@ jobs:
           name: Run KICS
           command: |
             /app/bin/kics scan -p ${PWD} -q /app/bin/assets --ci
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - kics
