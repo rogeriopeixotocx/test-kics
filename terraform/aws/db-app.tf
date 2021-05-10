@@ -19,7 +19,7 @@ resource "aws_db_instance" "default" {
   skip_final_snapshot     = true
   monitoring_interval     = 0
   publicly_accessible     = true
-
+  # TEST
   tags = {
     Name        = "${local.resource_prefix.value}-rds"
     Environment = local.resource_prefix.value
